@@ -1,0 +1,10 @@
+#!/bin/tcsh
+echo "Displaying Census Data for the $1 Largest Counties\n"
+cat /user/cse410/Projects/project01.headers
+if ($2 == "A") then
+  cat /user/cse410/Projects/project01.data | sort -t '|' -k3,6nr | head -n$1
+else if ($2 == "C") then
+  cat /user/cse410/Projects/project01.data | sort -t '|' -k3,6nr | grep -i "city" | head -n$1
+else
+  cat /user/cse410/Projects/project01.data | sort -t '|' -k3,6nr |  grep -i "township" | head -n$1
+endif

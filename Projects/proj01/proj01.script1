@@ -1,0 +1,4 @@
+#!/bin/tcsh -f
+echo "Displaying Census Data for $1 County\n"
+cat /user/cse410/Projects/project01.headers
+cat /user/cse410/Projects/project01.data | sort -t '|' -k3,6n | grep "| $1"
